@@ -1,0 +1,144 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Disease Diagnosis</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body style="font-family: 'Roboto', sans-serif; margin: 0; padding: 0; background-color: #f0f4f8; display: flex; flex-direction: column;">
+    <!-- Header -->
+    <header style="background-color: #084469; color: white; padding: 15px;">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center;">
+                <i class='fas fa-clinic-medical' style='font-size:36px; color: rgb(202, 206, 244); margin-right: 10px;'></i>
+                <h1 style="margin: 0; color: white; font-size: 36px; font-weight: bold; letter-spacing: 1px; margin-left: 20px; font-family:'Times New Roman';">Skin Disease Diagnosis</h1>
+            </div>
+            <nav>
+                <ul style="list-style-type: none; padding: 0; margin: 0; display: flex; align-items: center;">
+                    <li><a href="/" style="color: white; text-decoration: none;">Home</a></li>
+                    <li style="margin: 0 10px; border-left: 1px solid white; height: 20px;"></li>
+                    <li><a href="/" style="color: white; text-decoration: none;">Logout</a></li>
+                    <li style="margin: 0 10px; border-left: 1px solid white; height: 20px;"></li>
+                    <li><a href="/signup" style="color: white; text-decoration: none;">Register</a></li>
+                    <li style="margin: 0 10px; border-left: 1px solid white; height: 20px;"></li>
+                    <li><a href="/" style="color: white; text-decoration: none;">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <h1 style="text-align: center; margin: 20px 0;">Welcome to the Skin Disease Diagnosis Web App</h1>
+    
+    <div style="display: flex; align-items: flex-start; justify-content: space-between; margin: 20px auto; max-width: 800px;">
+        <div style="flex: 2; padding: 20px; background-color: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
+            <h2 style="text-align: center;">How It Works</h2>
+            <p style="text-align: center;">We're here to help you. Follow these steps to upload your image securely:</p>
+            <ol>
+                <li style="margin: 10px 0;">Ensure your image clearly shows the skin area in question.</li>
+                <li style="margin: 10px 0;">Click the "Choose File" button below to select your image.</li>
+                <li style="margin: 10px 0;">Once you've selected an image, click "Submit."</li>
+                <li style="margin: 10px 0;">Our system will analyze your image and provide feedback.</li>
+            </ol>
+            <p style="text-align: center; color: #084469;">Rest assured, your privacy is important to us, and all images are handled securely.</p>
+        </div>
+
+        <form action="" method="POST" enctype="multipart/form-data" style="max-width: 400px; margin-left: 20px; padding: 20px; background-color: white; border-radius: 10px; box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);">
+            {% csrf_token %} 
+            <h2 style="text-align: center; margin-bottom: 20px; color: #0867a7;">Upload Your Image</h2>
+            
+            <!-- Conditionally display either the icon or the uploaded image -->
+            <div style="text-align: center; margin-bottom: 20px;">
+                {% if img %}
+                    <img src="{{ img }}" alt="Uploaded Image" style="max-width: 100%; height: auto; border-radius: 8px;">
+                {% else %}
+                    <img src="https://img.icons8.com/?size=100&id=0GZ9d988O0R1&format=png&color=000000" alt="Upload Icon" style="width: 80px; height: 80px; margin-bottom: 10px;">
+                {% endif %}
+            </div>
+            
+            <!-- Image file input -->
+            <label for="uploadImage" style="display: block; font-size: 16px; color: #333; text-align: center;">Choose Image File:</label>
+            <input type="file" id="uploadImage" name="uploadImage" style="display: block; margin: 10px auto; border: 1px solid #ddd; border-radius: 5px; padding: 5px; width: 100%; cursor: pointer;">
+            
+            <!-- Submit button -->
+            <div style="text-align: center;">
+                <button type="submit" style="background-color: #084469; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; transition: background-color 0.3s ease; width: 100%;">Submit</button>
+            </div>
+        </form>
+    </div>
+    {% if area_dimensions %}
+        <div style="margin-top: 20px;">
+            <h3>Detected Skin Disease Area Dimensions</h3>
+            <p>Width: {{ area_dimensions.width }} pixels</p>
+            <p>Height: {{ area_dimensions.height }} pixels</p>
+        </div>
+    {% endif %}
+    <!-- <hr>
+    <div>
+        <h2>Skin Disease Result:</h2>
+        {% if obj1 %}
+        <h3>{{ obj1 }}</h3>
+        {% endif %}
+    </div>
+    <hr>
+    <div>
+        <h2>Diagnosis Result:</h2>
+        {% if obj2 %}
+            <h3>{{ obj2 }}</h3>
+        {% endif %}
+    </div> -->
+    <div>
+        <h2>Skin Disease Result:</h2>
+        {% if obj1 %}
+        <h3>{{ obj1 }}</h3>
+        {% endif %}
+    </div>
+    <hr>
+    <div>
+        <h2>Diagnosis Result:</h2>
+        {% if obj2 %}
+            <h3>{{ obj2 }}</h3>
+        {% endif %}
+    </div>
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to Skin Disease Finding Web App!!!</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        Image Upload: <input type="file" name="uploadImage"><br>
+        <button type="submit">Submit</button>
+    </form>
+    <hr>
+    <div>
+        {% if img %}
+            <img src="{{img}}" alt="No Image loaded" height="500px" width="500px">
+        {% endif %}
+    </div>
+    <hr>
+    <div>
+        <h2>Skin Disease Result:</h2>
+        {% if obj1 %}
+        <h3>{{ obj1 }}</h3>
+        {% endif %}
+    </div>
+    <hr>
+    <div>
+        <h2>Diagnosis Result:</h2>
+        {% if obj2 %}
+            <h3>{{ obj2 }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
+
+
+
